@@ -92,10 +92,19 @@ private:
 public:
     CCuentaAhorro() {}
 
-    CCuentaAhorro(string nombre, string cuenta, double saldo, double tipo, double mantenimiento) : CCuenta(nombre,
-                                                                                                           cuenta,
-                                                                                                           saldo,
-                                                                                                           tipo) {
+    CCuentaAhorro(
+        string nombre,
+        string cuenta,
+        double saldo,
+        double tipo,
+        double mantenimiento
+        ) : CCuenta(
+            nombre,
+            cuenta,
+            saldo,
+            tipo
+        )
+    {
         asignarCuotaMantenimiento(mantenimiento);
     }
 
