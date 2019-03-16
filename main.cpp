@@ -1,18 +1,9 @@
 #include <iostream>
-#include "exercises/aritmerica.cpp"
-#include "exercises/objects.cpp"
-#include "exercises/enums.cpp"
-#include "exercises/operators.cpp"
-#include "exercises/temperature.cpp"
+#include "exercises/vars02.cpp"
 using namespace std;
 
 int main() {
-    aritmerica();
-    ccuenta();
-    ordenador();
-    //enums();
-    operators();
-    temperature();
+    vars_definition();
 
     return 0;
 }

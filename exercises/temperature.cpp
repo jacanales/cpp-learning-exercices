@@ -1,36 +1,53 @@
 #include <iostream>
+#include <iomanip>
+#include "temperature.h"
 using namespace std;
 
-class Temperature{
-private:
-    float gradosC;
-public:
-    Temperature(float grados)
-    {
-        this->gradosC = grados;
-    }
+void Temperature::AsignarCentigrados(float gC)
+{
+    this->gradosC = gC;
+}
 
-    float ObtenerFahrenheit()
-    {
-        return calcularFahrenheit(this->gradosC);
-    }
+float Temperature::ObtenerFahrenheit()
+{
+    return calcularFahrenheit(this->gradosC);
+}
 
-    float ObtenerCentigrados()
-    {
-        return gradosC;
-    }
+float Temperature::ObtenerCentigrados()
+{
+    return gradosC;
+}
 
-    float calcularFahrenheit(float gradosC)
-    {
-        return 9.0F/5.0F * gradosC + 32.0;
-    }
-};
+float Temperature::calcularFahrenheit(float gradosC)
+{
+    return 9.0F/5.0F * gradosC + 32.0;
+}
 
 void temperature()
 {
-    Temperature t(21.0);
+    const int limInferior = -30;
+    const int limSuperior = 100;
+    const int incremento = 10;
+
+    Temperature t;
+    int gradosCent = limInferior;
+    float gradosFahr = 0;
+
+    cout << setiosflags(ios::fixed);
+
+    while (gradosCent <= limSuperior)
+    {
+        t.AsignarCentigrados(gradosCent);
+        gradosFahr = t.ObtenerFahrenheit();
+
+        cout << setw(8) << gradosCent << " C"
+             << setw(8) << setprecision(2) << gradosFahr << " F\n";
+
+        gradosCent += incremento;
+    }
+
     cout << "Grados Fº: " << t.ObtenerFahrenheit() << endl;
     cout << "Grados Cº: " << t.ObtenerCentigrados() << endl;
-    cout << "Límite inferior: " << t.calcularFahrenheit(-30);
-    cout << "Límite superior: " << t.calcularFahrenheit(100);
+    cout << "Límite inferior: " << t.calcularFahrenheit(-30) << endl;
+    cout << "Límite superior: " << t.calcularFahrenheit(100) << endl;
 }
