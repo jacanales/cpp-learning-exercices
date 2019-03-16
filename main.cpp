@@ -1,9 +1,9 @@
 #include <iostream>
-#include "exercises/vars02.cpp"
+#include "exercises/funciones.cpp"
 using namespace std;
 
 int main() {
-    vars_definition();
+    funciones();
 
     return 0;
 }
