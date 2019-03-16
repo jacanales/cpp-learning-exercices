@@ -1,9 +1,9 @@
 #include <iostream>
-#include "exercises/funciones.cpp"
+#include "examples/estadoflujo.cpp"
 using namespace std;
 
 int main() {
-    funciones();
+    flujo();
 
     return 0;
 }
